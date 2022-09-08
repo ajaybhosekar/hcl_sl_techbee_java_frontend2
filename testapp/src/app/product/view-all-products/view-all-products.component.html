@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+      <h2>View All Products Component</h2>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">This is a View All Products Component</h5>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Price</th>
+            <th scope="col">Date of Manufacture</th>
+            <th scope="col">Time of Manufacture</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <th scope="row">{{product.prodId}}</th>
+            <td>{{product.prodName}}</td>
+            <td>{{product.brand}}</td>
+            <td>{{product.price}}</td> 
+            <td>{{product.dateOfManufacture}}</td>
+            <td>{{product.timeOfManufacture}}</td>  
+            <td><a [routerLink]="['/product','update', product.prodId]" class="btn btn-primary">Update</a></td>
+            <td><a [routerLink]="['/product','delete', product.prodId]" class="btn btn-danger">Delete</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
